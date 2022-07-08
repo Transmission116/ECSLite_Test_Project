@@ -22,7 +22,6 @@
                 case ColorID.Blue : return "Blue";
                 case ColorID.Green : return "Greed";
                 default: return "";
-                    
             }
         }
     }
