@@ -12,4 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1345e2e8e1903412d8dbe7c56f839606, type: 3}
   m_Name: LevelConstructScheme
   m_EditorClassIdentifier: 
-  _playerSpawnPosition: {x: 0, y: 0, z: 0}
+  _buttonData:
+  - _position: {x: -2.5, y: 0, z: -2.5}
+    _colorId: 0
+    _pushDistance: 0.5
+  - _position: {x: 2.5, y: 0, z: 2.5}
+    _colorId: 0
+    _pushDistance: 0.7
+  _doorData:
+  - _position: {x: 2.5, y: 0, z: 0}
+    _colorId: 0
+    _doorMoveDelta: {x: 0, y: 1, z: 0}
+    _doorMoveSpeed: 0.2
+  - _position: {x: -2.5, y: 0, z: 0}
+    _colorId: 0
+    _doorMoveDelta: {x: 0, y: 1, z: 0}
+    _doorMoveSpeed: 0.1
+  _playerSpawnPosition: {x: 2.5, y: 0, z: -2.5}
