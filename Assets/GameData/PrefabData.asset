@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb6215b75b659c40a76d46e1f21b834, type: 3}
   m_Name: PrefabData
   m_EditorClassIdentifier: 
-  _levelPrefab: {fileID: 0}
-  _playerPrefab: {fileID: 0}
-  _greenButtonPrefab: {fileID: 0}
-  _blueButtonPrefab: {fileID: 0}
-  _greenDoorsPrefab: {fileID: 0}
-  _blueDoorsPrefab: {fileID: 0}
+  _levelPrefabs:
+  - {fileID: 5555855712972919395, guid: 2b63884945633de41b6a2c7f083a38fc, type: 3}
+  _playerPrefab: {fileID: 5923130805686667230, guid: d08c6ba4715a16343b9163ae77c9ca0e,
+    type: 3}
+  _buttonPrefab: {fileID: 5447361612904347927, guid: e766869b2dded457aaa65132110e03a3,
+    type: 3}
+  _doorsPrefab: {fileID: 2378232968802533816, guid: 4d48b4e3a52884a88b78f3adb931b5d1,
+    type: 3}
+  _greenMaterial: {fileID: 2100000, guid: 5f8bfd03987679b45891e86c99a51297, type: 2}
+  _blueMaterial: {fileID: 2100000, guid: be1e93e3997cd37459301731948043f6, type: 2}
