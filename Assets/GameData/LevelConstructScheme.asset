@@ -17,7 +17,7 @@ MonoBehaviour:
     _colorId: 0
     _pushDistance: 0.5
   - _position: {x: 2.5, y: 0, z: 2.5}
-    _colorId: 0
+    _colorId: 1
     _pushDistance: 0.7
   _doorData:
   - _position: {x: 2.5, y: 0, z: 0}
@@ -25,7 +25,7 @@ MonoBehaviour:
     _doorMoveDelta: {x: 0, y: 1, z: 0}
     _doorMoveSpeed: 0.2
   - _position: {x: -2.5, y: 0, z: 0}
-    _colorId: 0
+    _colorId: 1
     _doorMoveDelta: {x: 0, y: 1, z: 0}
     _doorMoveSpeed: 0.1
   _playerSpawnPosition: {x: 2.5, y: 0, z: -2.5}

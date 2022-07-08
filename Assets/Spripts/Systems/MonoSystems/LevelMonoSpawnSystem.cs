@@ -15,9 +15,9 @@ namespace ECS_Lite_Test
         
         public void Init(EcsSystems systems)
         {
+            SpawnLevel();
             SpawnButtons(systems);
             SpawnDoors(systems);
-            SpawnLevel();
         }
 
         private void SpawnDoors(EcsSystems systems)
@@ -40,7 +40,8 @@ namespace ECS_Lite_Test
                 ref LinkedIdComponent linkComp = ref linkedIdPool.Get(entity);
 
                 VisualView doorObject = _prefabFactory.Value.CreatePrefab(_assetData.Value.DoorsPrefab,posComp.Value);
-                doorObject.SetupVisualView(linkComp.Value);
+                
+                doorObject.SetupVisualView(_assetData.Value.GetMaterialByColorID(linkComp.Value));
                 
                 ref TransformComponent transComp = ref _transformPool.Value.Add(entity);
                 transComp.Transform = doorObject.Transform;
@@ -67,7 +68,8 @@ namespace ECS_Lite_Test
                 ref LinkedIdComponent linkComp = ref linkedIdPool.Get(entity);
                 
                 VisualView buttonObject = _prefabFactory.Value.CreatePrefab(_assetData.Value.ButtonPrefab,posComp.Value);
-                buttonObject.SetupVisualView(linkComp.Value);
+
+                buttonObject.SetupVisualView(_assetData.Value.GetMaterialByColorID(linkComp.Value));
                 
                 ref TransformComponent transComp = ref _transformPool.Value.Add(entity);
                 transComp.Transform = buttonObject.Transform;

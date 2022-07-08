@@ -74,6 +74,21 @@ namespace ECS_Lite_Test
 #if UNITY_EDITOR
                 .Add(new EcsWorldDebugSystem())
 #endif
+                .Add(new LevelInitializeSystem())
+                .Add(new PlayerInitSystem())
+                
+                .Add(new PlayerMonoSpawnSystem())
+                .Add(new LevelMonoSpawnSystem())
+                
+                .Add(new UnityMouseInputSystem())
+                .Add(new PlayerDestinationSystem())
+                .Add(new UpdateMoveSystem())
+                
+                .Add(new PushableSystem())
+                .Add(new CheckLinkedElemsActiveSystem())
+                .Add(new UpdateDestPointInLinkedElementsSystem())
+                
+                .Add(new MoveViewSystem())
                 .Inject(_prefabData)
                 .Inject(_levelConstructScheme)
                 .Inject(_prefabFactory)

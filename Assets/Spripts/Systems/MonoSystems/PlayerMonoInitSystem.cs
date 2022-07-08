@@ -23,7 +23,7 @@ namespace ECS_Lite_Test {
             {
                 EcsPool<PositionComponent> poolPosition = world.GetPool<PositionComponent>();
                 
-                VisualView playerUnit = _prefabFactory.Value.CreatePrefab(_assetData.Value.PlayerPrefab, poolPosition.Get(entity).Value);
+                TransformView playerUnit = _prefabFactory.Value.CreatePrefab(_assetData.Value.PlayerPrefab, poolPosition.Get(entity).Value);
                 _poolTransform.Value.Add(entity).Transform = playerUnit.Transform;
                 _poolAnimator.Value.Add(entity).Animator = playerUnit.GetComponent<Animator>();
             }

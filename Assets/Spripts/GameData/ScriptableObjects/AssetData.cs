@@ -8,8 +8,8 @@ namespace ECS_Lite_Test
     [CreateAssetMenu(menuName = "GameConfiguration/AssetData",fileName = "AssetData")]
     public class AssetData : ScriptableObject
     {
-        [SerializeField] private GameObject[] _levelPrefabs;
-        [SerializeField] private VisualView _playerPrefab;
+        [SerializeField] private TransformView[] _levelPrefabs;
+        [SerializeField] private TransformView _playerPrefab;
         
         [SerializeField] private VisualView _buttonPrefab;
         [SerializeField] private VisualView _doorsPrefab;
@@ -18,8 +18,8 @@ namespace ECS_Lite_Test
         [SerializeField] private Material _blueMaterial;
         
         
-        public GameObject[] LevelPrefab => _levelPrefabs;
-        public VisualView PlayerPrefab => _playerPrefab;
+        public TransformView[] LevelPrefab => _levelPrefabs;
+        public TransformView PlayerPrefab => _playerPrefab;
         
         public VisualView ButtonPrefab => _buttonPrefab;
         public VisualView DoorsPrefab => _doorsPrefab;

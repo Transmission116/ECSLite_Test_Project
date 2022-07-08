@@ -143,4 +143,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectMeshRenderer: {fileID: 2378232967912069490}
-  _transform: {fileID: 2378232967912069492}
+  _transform: {fileID: 2378232968802533815}

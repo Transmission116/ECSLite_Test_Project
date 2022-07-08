@@ -9,20 +9,13 @@ namespace ECS_Lite_Test
     {
         [SerializeField] private MeshRenderer _objectMeshRenderer;
         [SerializeField] private Transform _transform;
-         
-        private AssetData _assetData;
-
+        
         public Transform Transform => _transform;
 
-        [Inject]
-        public void Construct(AssetData assetData)
-        {
-            _assetData = assetData;
-        }
         
-        public void SetupVisualView(ColorID colorID)
+        public void SetupVisualView(Material material)
         {
-            _objectMeshRenderer.material = _assetData.GetMaterialByColorID(colorID);
+            _objectMeshRenderer.material = material;
         }
         
     }
