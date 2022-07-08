@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f87a096b562207449be0e38b023fc4d, type: 3}
   m_Name: DataSoInstaller
   m_EditorClassIdentifier: 
-  PrefabData: {fileID: 11400000, guid: f9019dd58b630ea4ebc627fb96ed8960, type: 2}
+  AssetData: {fileID: 11400000, guid: f9019dd58b630ea4ebc627fb96ed8960, type: 2}
   LevelConstructScheme: {fileID: 11400000, guid: 31d07d748d3fb44f9837b133fa094cf2,
     type: 2}
+  GameConfiguration: {fileID: 11400000, guid: a0b0af3314128a0479c4675d30829f45, type: 2}
