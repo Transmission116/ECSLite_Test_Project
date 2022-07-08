@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f87a096b562207449be0e38b023fc4d, type: 3}
+  m_Name: DataSoInstaller
+  m_EditorClassIdentifier: 
+  PrefabData: {fileID: 11400000, guid: f9019dd58b630ea4ebc627fb96ed8960, type: 2}
+  LevelConstructScheme: {fileID: 11400000, guid: 31d07d748d3fb44f9837b133fa094cf2,
+    type: 2}
