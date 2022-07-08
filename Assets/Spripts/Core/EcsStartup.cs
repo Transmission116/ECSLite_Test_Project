@@ -16,13 +16,19 @@ namespace ECS_Lite_Test
         private LevelConstructScheme _levelConstructScheme;
         private AssetData _prefabData;
         private PrefabFactory _prefabFactory;
+        private GameConfiguration _gameConfiguration;
 
         [Inject]
-        private void Construct(AssetData prefabData,LevelConstructScheme levelConstructScheme,PrefabFactory prefabFactory)
+        private void Construct(
+            AssetData prefabData,
+            LevelConstructScheme levelConstructScheme,
+            PrefabFactory prefabFactory,
+            GameConfiguration gameConfiguration)
         {
             _levelConstructScheme = levelConstructScheme;
             _prefabData = prefabData;
             _prefabFactory = prefabFactory;
+            _gameConfiguration = gameConfiguration;
         }
 
         public void Initialize()
@@ -71,6 +77,7 @@ namespace ECS_Lite_Test
                 .Inject(_prefabData)
                 .Inject(_levelConstructScheme)
                 .Inject(_prefabFactory)
+                .Inject(_gameConfiguration)
                 .Init();
         }
 

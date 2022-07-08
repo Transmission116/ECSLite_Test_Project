@@ -9,20 +9,20 @@ namespace ECS_Lite_Test
     public class AssetData : ScriptableObject
     {
         [SerializeField] private GameObject[] _levelPrefabs;
-        [SerializeField] private GameObject _playerPrefab;
+        [SerializeField] private VisualView _playerPrefab;
         
-        [SerializeField] private GameObject _buttonPrefab;
-        [SerializeField] private GameObject _doorsPrefab;
+        [SerializeField] private VisualView _buttonPrefab;
+        [SerializeField] private VisualView _doorsPrefab;
 
         [SerializeField] private Material _greenMaterial;
         [SerializeField] private Material _blueMaterial;
         
         
         public GameObject[] LevelPrefab => _levelPrefabs;
-        public GameObject PlayerPrefab => _playerPrefab;
+        public VisualView PlayerPrefab => _playerPrefab;
         
-        public GameObject ButtonPrefab => _buttonPrefab;
-        public GameObject DoorsPrefab => _doorsPrefab;
+        public VisualView ButtonPrefab => _buttonPrefab;
+        public VisualView DoorsPrefab => _doorsPrefab;
 
         public Material GetMaterialByColorID(ColorID coloeId)
         {

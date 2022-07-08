@@ -7,6 +7,9 @@ namespace ECS_Lite_Test
     {
         [SerializeField] private float _playerSpeed = 5;
         [SerializeField] private float _stopDistance = 0.001f;
-        
+
+        public float PlayerSpeed => _playerSpeed;
+
+        public float StopDistance => _stopDistance;
     }
 }

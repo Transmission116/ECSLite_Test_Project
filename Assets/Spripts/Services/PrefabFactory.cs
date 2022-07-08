@@ -16,7 +16,7 @@ namespace ECS_Lite_Test
             _assetData = assetData;
         }
         
-        public T CreatePrefab<T>(T prefabObject, Vector3 position) where T :  MonoBehaviour
+        public T CreatePrefab<T>(T prefabObject, Vector3 position) where T :  Object
         {
             return Object.Instantiate(prefabObject, position, Quaternion.identity);
         }
