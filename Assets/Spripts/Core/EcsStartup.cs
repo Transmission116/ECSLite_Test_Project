@@ -2,7 +2,6 @@ using System;
 using Leopotam.EcsLite;
 using Leopotam.EcsLite.Di;
 using Leopotam.EcsLite.UnityEditor;
-using UnityEngine;
 using Zenject;
 
 namespace ECS_Lite_Test
@@ -17,18 +16,21 @@ namespace ECS_Lite_Test
         private AssetData _prefabData;
         private PrefabFactory _prefabFactory;
         private GameConfiguration _gameConfiguration;
+        private ITimeService _timeService;
 
         [Inject]
         private void Construct(
             AssetData prefabData,
             LevelConstructScheme levelConstructScheme,
             PrefabFactory prefabFactory,
-            GameConfiguration gameConfiguration)
+            GameConfiguration gameConfiguration,
+            ITimeService timeService)
         {
             _levelConstructScheme = levelConstructScheme;
             _prefabData = prefabData;
             _prefabFactory = prefabFactory;
             _gameConfiguration = gameConfiguration;
+            _timeService = timeService;
         }
 
         public void Initialize()
@@ -77,22 +79,27 @@ namespace ECS_Lite_Test
                 .Add(new LevelInitializeSystem())
                 .Add(new PlayerInitSystem())
                 
-                .Add(new PlayerMonoSpawnSystem())
-                .Add(new LevelMonoSpawnSystem())
+                .Add(new MonoPlayerMonoSpawnSystem())
+                .Add(new MonoLevelSpawnSystem())
                 
                 .Add(new UnityMouseInputSystem())
                 .Add(new PlayerDestinationSystem())
                 .Add(new UpdateMoveSystem())
+                .Add(new DirectionSystem())
                 
                 .Add(new PushableSystem())
                 .Add(new CheckLinkedElemsActiveSystem())
                 .Add(new UpdateDestPointInLinkedElementsSystem())
                 
-                .Add(new MoveViewSystem())
+                .Add(new MonoMoveViewSystem())
+                .Add(new MonoDirectionViewSystem())
+                .Add(new MonoAnimationSystem())
+                
                 .Inject(_prefabData)
                 .Inject(_levelConstructScheme)
                 .Inject(_prefabFactory)
                 .Inject(_gameConfiguration)
+                .Inject(_timeService)
                 .Init();
         }
 

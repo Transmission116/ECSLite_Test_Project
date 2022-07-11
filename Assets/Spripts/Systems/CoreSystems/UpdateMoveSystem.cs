@@ -1,7 +1,7 @@
 ﻿using System;
+using System.Numerics;
 using Leopotam.EcsLite;
 using Leopotam.EcsLite.Di;
-using UnityEngine;
 
 namespace ECS_Lite_Test
 {
@@ -9,6 +9,7 @@ namespace ECS_Lite_Test
     {
 
         private EcsCustomInject<GameConfiguration> _gameComponent;
+        private EcsCustomInject<ITimeService> _timeService;
 
         public void Run(EcsSystems systems)
         {
@@ -29,13 +30,17 @@ namespace ECS_Lite_Test
                           moveSpeedComponent.Value;
                 
                 positionComponent.Value = Vector3.Lerp(positionComponent.Value,
-                    destPoint.Value, 1/t*Time.deltaTime);
+                    destPoint.Value, 1 / t* _timeService.Value.DeltaTime);
 
+                if (world.GetPool<MovingTag>().Has(entity)==false)
+                {
+                    world.GetPool<MovingTag>().Add(entity);
+                }
                 
-                
-                if ((destPoint.Value - positionComponent.Value).sqrMagnitude < _gameComponent.Value.StopDistance)
+                if (Vector3.Distance(destPoint.Value, positionComponent.Value) < _gameComponent.Value.StopDistance)
                 {
                     world.GetPool<DestinationPointComponent>().Del(entity);
+                    world.GetPool<MovingTag>().Del(entity);
                 }
             }
         }

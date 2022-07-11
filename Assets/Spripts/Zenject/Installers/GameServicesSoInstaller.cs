@@ -8,6 +8,7 @@ public class GameServicesSoInstaller : ScriptableObjectInstaller<GameServicesSoI
     public override void InstallBindings()
     {
         Container.Bind<PrefabFactory>().FromNew().AsSingle().NonLazy();
+        Container.Bind<ITimeService>().To<UnityTimeService>().FromNew().AsSingle().NonLazy();
         Container.BindInterfacesAndSelfTo<EcsStartup>().AsSingle().NonLazy();
     }
 }

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268de29aad7946b28228fd2a2c05bd50, type: 3}
   m_Name: GameConfiguration
   m_EditorClassIdentifier: 
-  _playerSpeed: 5
+  _playerSpeed: 1
   _stopDistance: 0.001

@@ -39,7 +39,7 @@ namespace ECS_Lite_Test
                     foreach (int dataEntity in _mouseInputCompFilter.Value)
                     {
                         ref MouseInputComponent inputDataComponent = ref _mouseInputCompPool.Value.Get(dataEntity);
-                        inputDataComponent.Value = hit.point;
+                        inputDataComponent.Value = hit.point.ToNumericVector3();
                         inputDataComponent.IsPressed = true;
                     }
                 }

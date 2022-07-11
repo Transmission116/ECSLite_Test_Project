@@ -3,7 +3,6 @@ using System.Numerics;
 using Leopotam.EcsLite;
 using Leopotam.EcsLite.Di;
 using UnityEngine.Assertions.Must;
-using Vector3 = UnityEngine.Vector3;
 
 namespace ECS_Lite_Test
 {
@@ -35,9 +34,9 @@ namespace ECS_Lite_Test
                     ref DeltaMoveComponent deltaMove = ref _poolDeltaMove.Value.Get(canBeActEnt);
 
                     Vector3 destPosition = new Vector3(
-                        startPosComp.Value.x -deltaMove.Value.x,
-                        startPosComp.Value.y -deltaMove.Value.y,
-                        startPosComp.Value.z -deltaMove.Value.z);
+                        startPosComp.Value.X -deltaMove.Value.X,
+                        startPosComp.Value.Y -deltaMove.Value.Y,
+                        startPosComp.Value.Z -deltaMove.Value.Z);
 
                     destComp.Value = destPosition;
                 }

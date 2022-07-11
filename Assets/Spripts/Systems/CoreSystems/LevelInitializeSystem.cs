@@ -15,7 +15,7 @@ namespace ECS_Lite_Test
             int entity = world.NewEntity();
             EcsPool<PlayerSpawnPositionComponent> spawnPosPool = world.GetPool<PlayerSpawnPositionComponent>();
             ref PlayerSpawnPositionComponent spawnComponent = ref spawnPosPool.Add(entity);
-            spawnComponent.Value = _levelConstructScheme.Value.PlayerSpawnPosition;
+            spawnComponent.Value = _levelConstructScheme.Value.PlayerSpawnPosition.ToNumericVector3();
 
             CreateButtonEntity(world);
             
@@ -30,7 +30,7 @@ namespace ECS_Lite_Test
                 int doorEntity = world.NewEntity();
                 EcsPool<PositionComponent> positionPool = world.GetPool<PositionComponent>();
                 ref PositionComponent positionComponent = ref positionPool.Add(doorEntity);
-                positionComponent.Value = doorData.Position;
+                positionComponent.Value = doorData.Position.ToNumericVector3();
 
                 EcsPool<LinkedIdComponent> linkedIdPool = world.GetPool<LinkedIdComponent>();
                 ref LinkedIdComponent linkedIdComponent = ref linkedIdPool.Add(doorEntity);
@@ -42,11 +42,11 @@ namespace ECS_Lite_Test
                 
                 EcsPool<StartPositionComponent> startPositionPool = world.GetPool<StartPositionComponent>();
                 ref StartPositionComponent startPosition = ref startPositionPool.Add(doorEntity);
-                startPosition.Value = doorData.Position;
+                startPosition.Value = doorData.Position.ToNumericVector3();;
                 
                 EcsPool<DeltaMoveComponent> deltaMovePool = world.GetPool<DeltaMoveComponent>();
                 ref DeltaMoveComponent deltaMovePosition = ref deltaMovePool.Add(doorEntity);
-                deltaMovePosition.Value = doorData.DoorMoveDelta;
+                deltaMovePosition.Value = doorData.DoorMoveDelta.ToNumericVector3();;
                 
                 EcsPool<CanBeActiveLinkedComponent> canBeActiveLinkedPool = world.GetPool<CanBeActiveLinkedComponent>();
                 canBeActiveLinkedPool.Add(doorEntity);
@@ -61,7 +61,7 @@ namespace ECS_Lite_Test
                 int buttonEntity = world.NewEntity();
                 EcsPool<PositionComponent> positionComponentPool = world.GetPool<PositionComponent>();
                 ref PositionComponent positionComponent = ref positionComponentPool.Add(buttonEntity);
-                positionComponent.Value = buttonData.Position;
+                positionComponent.Value = buttonData.Position.ToNumericVector3();;
 
                 EcsPool<LinkedIdComponent> linkedIdPool = world.GetPool<LinkedIdComponent>();
                 ref LinkedIdComponent linkedIdComponent = ref linkedIdPool.Add(buttonEntity);

@@ -1,4 +1,4 @@
-
+using System.Numerics;
 using Leopotam.EcsLite;
 using Leopotam.EcsLite.Di;
 
@@ -29,7 +29,7 @@ namespace ECS_Lite_Test {
 
                     ref DistanceCheckComponent distanceCheckComponent = ref distanceCheckPool.Get(pushableEnt);
                     
-                    if ((pushablePos.Value - canPushPos.Value).sqrMagnitude < distanceCheckComponent.DistanceForActivate)
+                    if (Vector3.Distance(pushablePos.Value,canPushPos.Value) < distanceCheckComponent.DistanceForActivate)
                     {
                         isSomebodyPushing = true;
                         break;

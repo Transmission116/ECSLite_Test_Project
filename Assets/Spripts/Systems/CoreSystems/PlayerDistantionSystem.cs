@@ -11,7 +11,7 @@ namespace ECS_Lite_Test
         public void Run(EcsSystems systems)
         {
             EcsWorld world = systems.GetWorld();
-            EcsFilter filter = world.Filter<ControlledByPlayer>()
+            EcsFilter filter = world.Filter<ControlledByPlayerTag>()
                 .Inc<MoveSpeedComponent>()
                 .Inc<PositionComponent>()
                 .End();

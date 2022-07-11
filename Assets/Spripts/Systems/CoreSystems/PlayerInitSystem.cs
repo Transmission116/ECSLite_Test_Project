@@ -9,7 +9,8 @@ namespace ECS_Lite_Test
     {
         private EcsPoolInject<PositionComponent> _poolPosition = default;
         private EcsPoolInject<MoveSpeedComponent> _poolMoveSpeed = default;
-        private EcsPoolInject<ControlledByPlayer> _poolControlByPlayer = default;
+        private EcsPoolInject<ControlledByPlayerTag> _poolControlByPlayer = default;
+        private EcsPoolInject<DirectionComponent> _poolDirectionSystem = default;
         private EcsPoolInject<CanPushTag> _canPushPool = default;
 
         private EcsCustomInject<GameConfiguration> _gameConfiguration;
@@ -26,6 +27,7 @@ namespace ECS_Lite_Test
                 _poolMoveSpeed.Value.Add(playerEntity).Value = _gameConfiguration.Value.PlayerSpeed;
                 _canPushPool.Value.Add(playerEntity);
                 _poolControlByPlayer.Value.Add(playerEntity);
+                _poolDirectionSystem.Value.Add(playerEntity);
                 spawnPosPool.Del(entity);
             }
         }
