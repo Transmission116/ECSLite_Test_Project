@@ -3,7 +3,7 @@
 Время затраченное на работу ~10ч.
 
 Используемые Фреймворки 
-ESCLite
+[b]ESCLite[/b]
 ECSLite.Di
 Zenject
 
